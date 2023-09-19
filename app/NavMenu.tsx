@@ -1,8 +1,8 @@
 import Link from "next/link";
 import styles from "./NavMenu.module.css";
 import Image from "next/image";
-// import { SignInButton, SignOutButton } from "../components/buttons";
-// import AuthCheck from "@/components/AuthCheck";
+import { SignInButton, SignOutButton } from "./components/buttons";
+import AuthCheck from "./components/AuthCheck";
 
 // Server component for SEO; bots can follow the links below
 
@@ -27,7 +27,7 @@ export default function NavMenu() {
         <li>
           <Link href={"/users"}>Users</Link>
         </li>
-        {/* <li>
+        <li>
           <SignInButton />
         </li>
 
@@ -35,7 +35,7 @@ export default function NavMenu() {
           <AuthCheck>
             <SignOutButton />
           </AuthCheck>
-        </li> */}
+        </li>
       </ul>
     </nav>
   );
