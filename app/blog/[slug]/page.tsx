@@ -1,4 +1,4 @@
-// ISR; update the cache every n seconds
+// ISR - Incremental Static Regeneration; update the cache every n seconds
 export const revalidate = 1200;
 
 interface Post {
@@ -7,6 +7,8 @@ interface Post {
   slug: string;
 }
 
+// Return all slug values
+// The generateStaticParams function can be used in combination with dynamic route segments to statically generate routes at build time instead of on-demand at request time.
 export async function generateStaticParams() {
   const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
     (res) => res.json()
