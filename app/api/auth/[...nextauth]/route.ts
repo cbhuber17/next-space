@@ -3,15 +3,15 @@ import type { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import { PrismaAdapter } from '@next-auth/prisma-adapter';
-// import { prisma } from '@/lib/prisma';
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
   // session: {
   //   strategy: 'jwt',
   // },
   secret: process.env.NEXTAUTH_SECRET,
-  //   adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
