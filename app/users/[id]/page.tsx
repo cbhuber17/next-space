@@ -1,4 +1,4 @@
-// import FollowButton from "@/components/FollowButton/FollowButton";
+import FollowButton from "@/components/FollowButton/FollowButton";
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -33,7 +33,7 @@ export default async function UserProfile({ params }: Props) {
       <p>{bio}</p>
 
       {/* @ts-expect-error Server Component */}
-      {/* <FollowButton targetUserId={params.id} /> */}
+      <FollowButton targetUserId={params.id} />
     </div>
   );
 }
