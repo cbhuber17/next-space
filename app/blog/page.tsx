@@ -3,6 +3,7 @@ import { loadPosts } from "@/lib/load-posts";
 
 export default async function Blog() {
   const posts = await loadPosts();
+
   return (
     <div>
       <h1>Welcome to our Blog</h1>
