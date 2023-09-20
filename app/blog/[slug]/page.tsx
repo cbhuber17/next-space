@@ -11,15 +11,15 @@ interface Post {
 
 // Return all slug values
 // The generateStaticParams function can be used in combination with dynamic route segments to statically generate routes at build time instead of on-demand at request time.
-export async function generateStaticParams() {
-  const posts: Post[] = await fetch(`${host}/api/content`).then((res) =>
-    res.json()
-  );
+// export async function generateStaticParams() {
+//   const posts: Post[] = await fetch(`${host}/api/content`).then((res) =>
+//     res.json()
+//   );
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }));
+// }
 
 interface Props {
   params: { slug: string };
