@@ -1,4 +1,4 @@
-import host from "../../../lib/api_route";
+import { loadPosts } from "@/lib/load-posts";
 
 // ISR - Incremental Static Regeneration; update the cache every n seconds
 export const revalidate = 1200;
@@ -26,9 +26,7 @@ interface Props {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const posts: Post[] = await fetch(`${host}/api/content`).then((res) =>
-    res.json()
-  );
+  const posts: Post[] = await loadPosts();
 
   // Find the post that matches the slug
   const post = posts.find((post) => post.slug === params.slug)!;

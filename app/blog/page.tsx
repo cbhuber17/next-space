@@ -1,8 +1,8 @@
 import Link from "next/link";
-import host from "../../lib/api_route";
+import { loadPosts } from "@/lib/load-posts";
 
 export default async function Blog() {
-  const posts = await fetch(`${host}/api/content`).then((res) => res.json());
+  const posts = await loadPosts();
   return (
     <div>
       <h1>Welcome to our Blog</h1>
